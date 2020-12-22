@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
   employees!: Observable<Employee[]>;
+  first_name!: string;
 
   constructor(private employeeService: EmployeeService,
-    private router: Router) {}
+    private router: Router) { }
 
   ngOnInit() {
     this.reloadData();
@@ -34,7 +35,13 @@ export class EmployeeListComponent implements OnInit {
         error => console.log(error));
   }
 
-  employeeDetails(id: number){
+  employeeDetails(id: number) {
     this.router.navigate(['details', id]);
   }
+
+  getEmployeesByName() {
+    console.log('here');
+    this.employees = this.employeeService.getEmployeesByName(this.first_name);
+  }
+
 }

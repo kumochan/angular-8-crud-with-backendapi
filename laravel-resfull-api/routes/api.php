@@ -27,3 +27,4 @@ Route::get('/customers/{customerId}', 'CustomerController@show')->name('customer
 Route::post('/customers', 'CustomerController@store')->name('customers.store');
 Route::put('/customers/{customerId}', 'CustomerController@update')->name('customers.update');
 Route::delete('/customers/{customerId}', 'CustomerController@destroy')->name('customers.destroy');
+Route::get('/customers/search/{first_name}', 'CustomerController@search')->name('customers.search');

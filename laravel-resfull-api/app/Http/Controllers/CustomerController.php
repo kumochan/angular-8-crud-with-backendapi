@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Services\CustomerService;
 
@@ -12,6 +13,12 @@ class CustomerController extends Controller
     public function __construct(CustomerService $customerService)
     {
         $this->customerService = $customerService;
+    }
+
+    public function search(Request $request)
+    {
+        $customers = Customer::where('first_name', 'like', '%' . $request->first_name . '%')->get();
+        return response()->json($customers, 200);
     }
 
     public function index()

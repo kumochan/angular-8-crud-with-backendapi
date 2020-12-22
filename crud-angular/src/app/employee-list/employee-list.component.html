@@ -3,6 +3,12 @@
         <h2>Employee List</h2>
     </div>
     <div class="panel-body">
+        <div class="row">
+            <input type="text" class="form-control col-md-8" placeholder="Search by title" [(ngModel)]="first_name" />
+            <button class="btn btn-outline-secondary col-md-1" (click)="getEmployeesByName()">
+                Search
+            </button>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
