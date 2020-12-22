@@ -14,7 +14,6 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployee(id: number): Observable<any> {
-    console.log('this');
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
