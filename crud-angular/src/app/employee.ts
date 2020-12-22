@@ -1,7 +1,6 @@
 export class Employee {
     id!: number;
-    firstName!: string;
-    lastName!: string;
-    emailId!: string;
-    active!: boolean;
+    first_name!: string;
+    last_name!: string;
+    created_at!: any;
 }
