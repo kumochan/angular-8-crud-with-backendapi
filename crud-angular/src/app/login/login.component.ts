@@ -11,11 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  token!: Observable<string>;
-  //token = new Observable<any>();
+  result!: Observable<any>;
+  // token = new Observable<any>();
   // token!: Observable<string>;
   email = '';
-  
   password = '';
 
   constructor(private loginService: LoginService,
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToken();
-    console.log(this.token);
+    console.log(this.result);
   }
 
   getToken() {
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data);
         console.log(data.token);
-        this.token = data;
+        this.result = data;
       },
       error => console.log(error));
   }
