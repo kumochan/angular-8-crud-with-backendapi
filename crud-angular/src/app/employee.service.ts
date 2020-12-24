@@ -21,9 +21,10 @@ export class EmployeeService {
   }
 
   createEmployee(employee: Object): Observable<Object> {
-    var auth_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwODc0OTUxMCwiZXhwIjoxNjA4NzUzMTEwLCJuYmYiOjE2MDg3NDk1MTAsImp0aSI6IjFLbzRhdHFzUnFVSmJWeXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.j-pbmUbt_u9d5IdQKYx-rDQU49bqGQ4bhDiSj-MQcCY';
+    var auth_token = '1eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwODc3ODkwMywiZXhwIjoxNjA4NzgyNTAzLCJuYmYiOjE2MDg3Nzg5MDMsImp0aSI6ImRzNHF4dGJ2RVlrcVJMdjUiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.06-jQTiw_pjSJn5jmXVrXLzEq44PW2dnhN58GVEDJk4';
     var reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
+      // cu phap co dau cach dang sau Bearer
       'Authorization': 'Bearer ' + auth_token
     });
     return this.http.post(`${this.baseUrl}`, employee, { headers: reqHeader });

@@ -29,10 +29,10 @@ export class CreateEmployeeComponent implements OnInit {
     this.employeeService
       .createEmployee(this.employee).subscribe((data: any) => {
         if (data.status != undefined && data.status != 'undefined') {
-          console.log(data);
-          console.log(data.status);
           if (data.status.includes('Authorization Token not found')) {
             this.error_msg = 'Authorization Token not found';
+          } else if (data.status.includes('Token is Invalid')) {
+            this.error_msg = 'Token is Invalid';
           }
         }
 

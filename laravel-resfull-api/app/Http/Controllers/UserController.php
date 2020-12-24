@@ -13,6 +13,9 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
+    /*
+     * get token
+     */
     public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -51,6 +54,9 @@ class UserController extends Controller
         return response()->json(compact('user','token'),201);
     }
 
+    /*
+     * get current user
+     */
     public function getAuthenticatedUser()
     {
         try {
@@ -70,7 +76,6 @@ class UserController extends Controller
         } catch (JWTException $e) {
 
             return response()->json(['token_absent'], $e->getStatusCode());
-
         }
 
         return response()->json(compact('user'));

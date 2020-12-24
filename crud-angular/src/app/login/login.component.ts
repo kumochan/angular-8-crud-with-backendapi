@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   //token = new Observable<any>();
   // token!: Observable<string>;
   email = '';
+  
   password = '';
 
   constructor(private loginService: LoginService,
