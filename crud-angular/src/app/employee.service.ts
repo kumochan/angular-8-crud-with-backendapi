@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,12 +14,19 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
+
+
   getEmployee(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   createEmployee(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, employee);
+    var auth_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwODc0OTUxMCwiZXhwIjoxNjA4NzUzMTEwLCJuYmYiOjE2MDg3NDk1MTAsImp0aSI6IjFLbzRhdHFzUnFVSmJWeXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.j-pbmUbt_u9d5IdQKYx-rDQU49bqGQ4bhDiSj-MQcCY';
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.post(`${this.baseUrl}`, employee, { headers: reqHeader });
   }
 
   updateEmployee(id: number, value: any): Observable<Object> {
@@ -34,6 +42,6 @@ export class EmployeeService {
   }
 
   getEmployeesByName(name: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/search/${name}`);
+    return this.http.post(`${this.baseUrl}/search/`, name);
   }
 }

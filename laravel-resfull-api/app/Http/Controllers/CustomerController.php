@@ -20,8 +20,7 @@ class CustomerController extends Controller
     public function search(Request $request)
     {
         $customers = Customer::where('first_name', 'like', '%' . $request->first_name . '%')->get();
-        $customerModel = new CustomerModel($customers, new User());
-        return response()->json($customerModel, 200);
+        return response()->json($customers, 200);
     }
 
     public function index()

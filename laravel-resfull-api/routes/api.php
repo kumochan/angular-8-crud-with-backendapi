@@ -22,9 +22,19 @@ Route::get('/customers', 'CustomerController@index')->name('customers.all');
 Route::get('/customers/{customerId}', 'CustomerController@show')->name('customers.show');
 
 
+// jwt-open api
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@authenticate');
 
+// jwt-authenticate api
+Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::get('user', 'UserController@getAuthenticatedUser');
 
-Route::post('/customers', 'CustomerController@store')->name('customers.store');
-Route::put('/customers/{customerId}', 'CustomerController@update')->name('customers.update');
-Route::delete('/customers/{customerId}', 'CustomerController@destroy')->name('customers.destroy');
-Route::get('/customers/search/{first_name}', 'CustomerController@search')->name('customers.search');
+    // customers
+    Route::post('/customers', 'CustomerController@store')->name('customers.store');
+    Route::put('/customers/{customerId}', 'CustomerController@update')->name('customers.update');
+    Route::delete('/customers/{customerId}', 'CustomerController@destroy')->name('customers.destroy');
+    Route::post('/customers/search/{first_name}', 'CustomerController@search')->name('customers.search');
+
+    //Route::get('closed', 'DataController@closed');
+});

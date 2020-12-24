@@ -12,6 +12,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   employee: Employee = new Employee();
   submitted = false;
+  error_msg = '';
 
   constructor(private employeeService: EmployeeService,
     private router: Router) { }
@@ -27,9 +28,16 @@ export class CreateEmployeeComponent implements OnInit {
   save() {
     this.employeeService
       .createEmployee(this.employee).subscribe((data: any) => {
-        console.log(data)
+        if (data.status != undefined && data.status != 'undefined') {
+          console.log(data);
+          console.log(data.status);
+          if (data.status.includes('Authorization Token not found')) {
+            this.error_msg = 'Authorization Token not found';
+          }
+        }
+
         this.employee = new Employee();
-        this.gotoList();
+        //this.gotoList();
       },
         (error: any) => console.log(error));
   }
