@@ -3,7 +3,13 @@
 
 angular-8-crud with laravel backend api
 
- Step 01.
+# lession-02
+Angular overview
+
+
+
+``` 
+Step 01.
  - Restore DB
  
  Step 02.
@@ -15,3 +21,4 @@ angular-8-crud with laravel backend api
 - Go to Angular project folder with command (ex: cd /Users/xxx/angular-crud)
 - Start Angular project with command: ng serve
 - Go to menu EmployeeList to show list Employee
+```
