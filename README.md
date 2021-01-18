@@ -6,9 +6,13 @@ angular-8-crud with laravel backend api
 # lession-02
 Angular overview
 
+```
 - Learn abount Promise, Resolve, Reject
 - Async, await
+- Bài đọc https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
+```
 
+# lession-08
 
 ``` 
 Step 01.
