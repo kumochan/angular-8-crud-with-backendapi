@@ -6,6 +6,8 @@ angular-8-crud with laravel backend api
 # lession-02
 Angular overview
 
+- Learn abount Promise, Resolve, Reject
+- Async, await
 
 
 ``` 
