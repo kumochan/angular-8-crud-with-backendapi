@@ -36,38 +36,36 @@ httpGet('https://api.github.com/search/repositories?q=angular').then(
     }
 );
 */
-/*
 //======================================================
 // Parse Json
 //======================================================
-function parseResponse(value: string) {
+function parseResponse(value) {
     try {
         return JSON.parse(value);
-    } catch (_) {
+    }
+    catch (_) {
         return value;
     }
 }
-
 function test() {
     console.log('test-function');
 }
-
-
 httpGet(urlweather)
     .then(parseResponse)
-    .then(data => console.log(data))
-    .then(test)
-    .catch(function (reason) {
-        console.error('Something went wrong', reason);
-    });
-*/
+    .then(function (data) { return console.log(data); })
+    .then(test)["catch"](function (reason) {
+    console.error('Something went wrong', reason);
+});
+/*
 //======================================================
 // Wait
 //======================================================
-var wait5Secs = new es6_promise_1.Promise(function (resolve, reject) {
-    setTimeout(function () {
+const wait5Secs = new Promise((resolve, reject) => {
+    setTimeout(() => {
         resolve(httpGet(urlweather));
         //httpGet(urlweather);//.then(data => console.log(data));
     }, 5000);
 });
-wait5Secs.then(function (data) { return console.log(data); })["catch"](function (err) { return console.error(err); });
+
+wait5Secs.then(data => console.log(data)).catch(err => console.error(err));
+*/ 

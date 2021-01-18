@@ -27,7 +27,6 @@ function httpGet(url: string): Promise<any> {
     });
 }
 
-/*
 httpGet('https://api.github.com/search/repositories?q=angular').then(
     function (value) {
         console.log('Contents: ' + (value));
@@ -36,7 +35,6 @@ httpGet('https://api.github.com/search/repositories?q=angular').then(
         console.error('Something went wrong', reason);
     }
 );
-*/
 
 /*
 //======================================================
@@ -54,7 +52,6 @@ function test() {
     console.log('test-function');
 }
 
-
 httpGet(urlweather)
     .then(parseResponse)
     .then(data => console.log(data))
@@ -64,6 +61,7 @@ httpGet(urlweather)
     });
 */
 
+/*
 //======================================================
 // Wait
 //======================================================
@@ -75,3 +73,4 @@ const wait5Secs = new Promise((resolve, reject) => {
 });
 
 wait5Secs.then(data => console.log(data)).catch(err => console.error(err));
+*/
