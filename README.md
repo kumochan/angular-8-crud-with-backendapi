@@ -66,6 +66,11 @@ Setup environment
     }
 ```
 
+### Checkall/uncheckall
+```
+using angular form to work
+```
+
 # lession-08
 
 ``` 
