@@ -11,7 +11,7 @@ export class AppComponent {
   months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
 
-  //isavailable = false;
+  isavailable = false;
 
   myClickFunction(event: any) {
     //just added console.log which will display the event details in browser on click of the button.
@@ -20,8 +20,11 @@ export class AppComponent {
     console.log(this);
   }
 
-  
+  // ########## Example 01 change font size ##########
+  fontSize = 15;
+  onChange(value: number) {
+    this.fontSize = value;
+  }
 
-  
-  
+
 }
