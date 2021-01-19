@@ -8,7 +8,7 @@ Typescript overview
 ```
 - Learn abount Promise, Resolve, Reject
 - Async, await
-- Bài đọc https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
+- Read https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
 ```
 
 # lession-03: Angular overview
@@ -18,8 +18,10 @@ Typescript overview
 ```
 -   npm install bootstrap jquery --save
 -   angular.json file
+
+    <pre><code>
     ...
- 
+    
     "styles": [
     "src/styles.css",
     "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -30,8 +32,11 @@ Typescript overview
     ]
     
     ...
+    </code></pre>
+
 - If bootstrap won't work then try to import bootstrap CSS in style.css like:
 
+    <pre><code>
     /* You can add global styles to this file, and also import other style files */
 
     @import '~bootstrap/dist/css/bootstrap.min.css';
@@ -45,6 +50,7 @@ Typescript overview
         text-align: center;
         color: white;
     }
+    </code></pre>
 ```
 
 # lession-08
