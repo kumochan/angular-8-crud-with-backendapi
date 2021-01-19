@@ -1,4 +1,4 @@
-
+/*
 // example-01
 async function f() {
     const promise = new Promise((resolve, reject) => {
@@ -9,8 +9,9 @@ async function f() {
     console.log(result); // "done!"
 }
 f();
+*/
 
-
+/*
 // example-02
 import fetch from 'cross-fetch';
 
@@ -27,9 +28,12 @@ class User {
         return await response.json();
     }
 }
+
 const u = new User('kumochan');
 u.getUser().then(res => console.log(res));
+*/
 
+/*
 // example-03
 async function getUser(username: string) {
     try {
@@ -44,16 +48,46 @@ async function getUser(username: string) {
 getUser('bob')
     .then(res => console.log(res))
     .catch(err => console.warn(err));
-
+*/
 
 // example-04
-let x = 0;
-async function r5() {
-    x += 1;
-    console.log(x);
-    return 5;
-} (
-    async () => {
+// let x = 0;
+// async function r5() {
+//     x += 1;
+//     console.log(x);
+//     return 5;
+// } (
+//     async () => {
+//         x += await r5();
+//         console.log(x);
+//     })();
+
+// fixed version
+(() => {
+    let x = 0;
+    async function r6() {
+        x += 1;
+        console.log(x);
+        return 5;
+    }
+
+    (async () => {
+        const y = await r6();
+        x += y;
+        console.log(x);
+    })();
+})();
+
+(() => {
+    let x = 0;
+    async function r5() {
+        x += 1;
+        console.log(x);
+        return 5;
+    }
+
+    (async () => {
         x += await r5();
         console.log(x);
     })();
+})();

@@ -1,4 +1,15 @@
-"use strict";
+/*
+// example-01
+async function f() {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 5000)
+    });
+    // wait till the promise resolves (*)
+    const result = await promise;
+    console.log(result); // "done!"
+}
+f();
+*/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,98 +46,90 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
-// example-01
-function f() {
-    return __awaiter(this, void 0, void 0, function () {
-        var promise, result;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    promise = new Promise(function (resolve, reject) {
-                        setTimeout(function () { return resolve("done!"); }, 5000);
-                    });
-                    return [4 /*yield*/, promise];
-                case 1:
-                    result = _a.sent();
-                    console.log(result); // "done!"
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-f();
+var _this = this;
+/*
 // example-02
-var cross_fetch_1 = require("cross-fetch");
-var User = /** @class */ (function () {
-    function User(username) {
-        this.username = '';
+import fetch from 'cross-fetch';
+
+class User {
+    username = '';
+    constructor(username) {
         this.username = username;
     }
     // fetch = require("node-fetch");
-    User.prototype.getUser = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, cross_fetch_1["default"]("https://api.github.com/search/users?q=" + this.username)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.json()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return User;
-}());
-var u = new User('kumochan');
-u.getUser().then(function (res) { return console.log(res); });
+    async getUser() {
+        const response = await fetch(
+            `https://api.github.com/search/users?q=${this.username}`
+        );
+        return await response.json();
+    }
+}
+
+const u = new User('kumochan');
+u.getUser().then(res => console.log(res));
+*/
+/*
 // example-03
-function getUser(username) {
-    return __awaiter(this, void 0, void 0, function () {
-        var response, e_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, cross_fetch_1["default"]("https://api.github.com/search/users?q=" + username)];
-                case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.json()];
-                case 2: return [2 /*return*/, _a.sent()];
-                case 3:
-                    e_1 = _a.sent();
-                    throw e_1;
-                case 4: return [2 /*return*/];
-            }
-        });
-    });
+async function getUser(username: string) {
+    try {
+        const response = await fetch(
+            `https://api.github.com/search/users?q=${username}`
+        );
+        return await response.json();
+    } catch (e) {
+        throw e;
+    }
 }
 getUser('bob')
-    .then(function (res) { return console.log(res); })["catch"](function (err) { return console.warn(err); });
+    .then(res => console.log(res))
+    .catch(err => console.warn(err));
+*/
 // example-04
-var x = 0;
-function r5() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            x += 1;
-            console.log(x);
-            return [2 /*return*/, 5];
-        });
-    });
-}
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var _a;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _a = x;
-                return [4 /*yield*/, r5()];
-            case 1:
-                x = _a + _b.sent();
+// let x = 0;
+// async function r5() {
+//     x += 1;
+//     console.log(x);
+//     return 5;
+// } (
+//     async () => {
+//         x += await r5();
+//         console.log(x);
+//     })();
+// fixed version
+(function () {
+    var x = 0;
+    function r6() {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                x += 1;
                 console.log(x);
-                return [2 /*return*/];
-        }
-    });
-}); })();
+                return [2 /*return*/, 5];
+            });
+        });
+    }
+    (function () { return __awaiter(_this, void 0, void 0, function () {
+        var y;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, r6()];
+                case 1:
+                    y = _a.sent();
+                    x += y;
+                    console.log(x);
+                    return [2 /*return*/];
+            }
+        });
+    }); })();
+})();
+(function () {
+    var x = 0;
+    function r5() {
+        x += 1;
+        console.log(x);
+        return 5;
+    }
+    (function () {
+        x += r5();
+        console.log(x);
+    })();
+})();
