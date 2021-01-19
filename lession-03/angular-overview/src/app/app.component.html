@@ -1,0 +1,21 @@
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    <h1><span class="btn btn-primary">{{ title }} app is running!</span></h1>
+
+    <form class="needs-validation">
+      <label for="firstName" class="form-label">Months: </label>
+      <select class="form-control">
+        <option *ngFor="let i of months">{{i}}</option>
+      </select>
+    </form>
+
+    <p></p>
+    <div class="row">
+      <button class="btn btn-warning" (click)="myClickFunction($event)">
+        Click Me
+      </button>
+    </div>
+  </div>
+
+  <app-check-all></app-check-all>
+</main>
