@@ -11,11 +11,11 @@ Typescript overview
 - Bài đọc https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
 ```
 
-# lession-03
-Angular overview
+# lession-03: Angular overview
+
+### Install bootstrap
 
 ```
-# Install bootstrap
 -   npm install bootstrap jquery --save
 -   angular.json file
     ...
