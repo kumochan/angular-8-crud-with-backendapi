@@ -14,21 +14,17 @@ angular-8-crud with laravel backend api
 ### Setups
 ```
 Setup environment
-1. install node
-	https://nodejs.org/en/download/
-2. install typescript
-	https://www.digitalocean.com/community/tutorials/typescript-new-project
+1. install node: https://nodejs.org/en/download/
+2. install typescript: https://www.digitalocean.com/community/tutorials/typescript-new-project
 ```
 
 # lession-03: Angular overview
 
 ### Basic command
 ```
-1. create component
-	ng g c login
+1. create component: ng g c login
 
-2. run serve
-    ng serve -o
+2. run serve: ng serve -o
 
 ```
 
@@ -102,6 +98,14 @@ imports: [
     AppRoutingModule,
     FormsModule
 ],
+```
+
+# lession-04: Angular Component
+```
+    call another components function
+    https://stackoverflow.com/questions/37587732/how-to-call-another-components-function-in-angular2
+    https://stackoverflow.com/a/54245245/4506775
+
 ```
 
 # lession-08
