@@ -2,16 +2,33 @@
 
 angular-8-crud with laravel backend api
 
-# lession-02
-Typescript overview
+# lession-02: Typescript overview
 
+### Keys result
 ```
 - Learn abount Promise, Resolve, Reject
 - Async, await
 - Read https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
 ```
 
+### Setups
+```
+Setup environment
+1. install node
+	https://nodejs.org/en/download/
+2. install typescript
+	https://www.digitalocean.com/community/tutorials/typescript-new-project
+```
+
 # lession-03: Angular overview
+
+### Basic command
+```
+1. create component
+	ng g c login
+
+2. ng serve -o
+```
 
 ### Install bootstrap
 
@@ -19,24 +36,21 @@ Typescript overview
 -   npm install bootstrap jquery --save
 -   angular.json file
 
-    <pre><code>
     ...
     
     "styles": [
-    "src/styles.css",
-    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "src/styles.css",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
     ],
     "scripts": [
-    "node_modules/jquery/dist/jquery.min.js",
-    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
     
     ...
-    </code></pre>
 
 - If bootstrap won't work then try to import bootstrap CSS in style.css like:
 
-    <pre><code>
     /* You can add global styles to this file, and also import other style files */
 
     @import '~bootstrap/dist/css/bootstrap.min.css';
@@ -50,7 +64,6 @@ Typescript overview
         text-align: center;
         color: white;
     }
-    </code></pre>
 ```
 
 # lession-08
