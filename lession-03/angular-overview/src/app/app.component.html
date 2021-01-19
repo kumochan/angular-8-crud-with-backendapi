@@ -1,11 +1,13 @@
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1><span class="btn btn-primary">{{ title }} app is running!</span></h1>
+    <h1> Lession 03: Angular Overview
+      <span class="btn btn-primary">{{ title }} app is running!</span>
+    </h1>
 
     <!-- ########## Example 01 change font size ########## -->
     <p>
-      <input type="number" [value]="fontSize" (change)="onChange($event.target.value)" />
-      <input type="number" [value]="fontSize" onChange='{(event) =>  this.setState({ value: event.target.value })}' />
+      <!-- <input type="number" [value]="fontSize" (change)="onChange($event.target.value)" /> -->
+      <!-- <input type="number" [value]="fontSize" onChange='{(event) =>  this.setState({ value: event.target.value })}' /> -->
     </p>
 
     <p class="output" [style.fontSize.px]="fontSize">
@@ -41,9 +43,12 @@
 
   <!-- ########## Example 05 call component ########## -->
   <app-check-all></app-check-all>
+
+  <!-- ########## Example 06 hacker new-articles ########## -->
+  <app-hacker-new></app-hacker-new>
 </main>
 
 <div class="bg-light p-5 rounded">
-  <footer class="container"></footer>
-  <span class="text-center">footer</span>
+  <!-- <footer class="container"></footer> -->
+  <p class="text-center">footer</p>
 </div>

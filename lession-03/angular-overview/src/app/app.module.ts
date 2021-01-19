@@ -6,11 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckAllComponent } from './check-all/check-all.component';
+import { HackerNewComponent } from './hacker-new/hacker-new.component';
+import { HackerNewLikeComponent } from './hacker-new-like/hacker-new-like.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckAllComponent
+    CheckAllComponent,
+    HackerNewComponent,
+    HackerNewLikeComponent
   ],
   imports: [
     BrowserModule,

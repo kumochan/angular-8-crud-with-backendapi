@@ -100,6 +100,14 @@ imports: [
 ],
 ```
 
+### Bài tập
+```
+ - Tìm hiểu và code lại bài checkall
+ - Tìm hiểu và code lại bài hacker-new
+ - Viết reflections về việc gọi compnent lẫn nhau.
+ - Tìm hiểu trước việc truyền dữ liệu giữa các component.
+```
+
 # lession-04: Angular Component
 ```
     call another components function
