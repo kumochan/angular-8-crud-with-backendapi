@@ -27,7 +27,31 @@ Setup environment
 1. create component
 	ng g c login
 
-2. ng serve -o
+2. run serve
+    ng serve -o
+
+```
+
+### Console.log in angular
+```
+    no-console is caused by TSLint and its rule:
+
+    Rule: no-console
+
+    Bans the use of specified console methods.
+
+    Check your tslint.json:
+
+    "no-console": [
+        true,
+        "debug",
+        "info",
+        "time",
+        "timeEnd",
+        "trace"
+    ],
+    Just change true to false.
+
 ```
 
 ### Install bootstrap
@@ -69,6 +93,15 @@ Setup environment
 ### Checkall/uncheckall
 ```
 using angular form to work
+
+add to app.module.ts
+import { FormsModule } from '@angular/forms';
+
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+],
 ```
 
 # lession-08
