@@ -1,15 +1,50 @@
-# angular-8-crud
-
+# Angular example
 
 angular-8-crud with laravel backend api
 
 # lession-02
-Angular overview
+Typescript overview
 
 ```
 - Learn abount Promise, Resolve, Reject
 - Async, await
 - Bài đọc https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await
+```
+
+# lession-03
+Angular overview
+
+```
+# Install bootstrap
+-   npm install bootstrap jquery --save
+-   angular.json file
+    ...
+ 
+    "styles": [
+    "src/styles.css",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    "scripts": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ]
+    
+    ...
+- If bootstrap won't work then try to import bootstrap CSS in style.css like:
+
+    /* You can add global styles to this file, and also import other style files */
+
+    @import '~bootstrap/dist/css/bootstrap.min.css';
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        height: 70px;
+        background-color: blue;
+        text-align: center;
+        color: white;
+    }
 ```
 
 # lession-08
