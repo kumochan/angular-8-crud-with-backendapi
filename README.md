@@ -165,4 +165,5 @@ Step 01.
 - Go to Angular project folder with command (ex: cd /Users/xxx/angular-crud)
 - Start Angular project with command: ng serve
 - Go to menu EmployeeList to show list Employee
+
 ```
