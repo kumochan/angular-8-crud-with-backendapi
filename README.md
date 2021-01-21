@@ -144,8 +144,18 @@ step 05.
 	When that is done, set the jwt-auth secret by running the following command:
 
     	$ php artisan jwt:secret
+```
+
+
+Run command before start project clone from git-hub
+```
+php artisan jwt:secret
+php artisan config:clear
+php artisan config:cache
+```
 
 Image upload angular
+```
 	https://www.freecodecamp.org/news/how-to-make-image-upload-easy-with-angular-1ed14cb2773b/
 
 ```
