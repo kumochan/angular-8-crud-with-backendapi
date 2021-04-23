@@ -21,9 +21,13 @@ export class EmployeeService {
   }
 
   createEmployee(employee: Object): Observable<Object> {
-    var auth_token = '1eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwODc3ODkwMywiZXhwIjoxNjA4NzgyNTAzLCJuYmYiOjE2MDg3Nzg5MDMsImp0aSI6ImRzNHF4dGJ2RVlrcVJMdjUiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.06-jQTiw_pjSJn5jmXVrXLzEq44PW2dnhN58GVEDJk4';
+    var auth_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTE5MzI4NCwiZXhwIjoxNjE5MTk2ODg0LCJuYmYiOjE2MTkxOTMyODQsImp0aSI6IlFpbVZ4b1RaT2Y1bU5JWXUiLCJzdWIiOjMsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RX9PG_UArRZRX_PVzdsddWbVq6x1jDViTLGui9oxut8';
+    //'', '*'
+    //'', ''
     var reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
+      //'Access-Control-Allow-Origin': '*',
+      //'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
       // cu phap co dau cach dang sau Bearer
       'Authorization': 'Bearer ' + auth_token
     });
@@ -35,7 +39,17 @@ export class EmployeeService {
   }
 
   deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    var auth_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxMTMwNTQxMCwiZXhwIjoxNjExMzA5MDEwLCJuYmYiOjE2MTEzMDU0MTAsImp0aSI6ImZBQnZ6MW8yV3hxMFZPRG0iLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.FO8Ggjx7oJrsDBfVVwuZuGuHGAoLq0fuhBZp6CFCaHE';
+    //'', '*'
+    //'', ''
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      //'Access-Control-Allow-Origin': '*',
+      //'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text', headers: reqHeader });
   }
 
   getEmployeesList(): Observable<any> {
