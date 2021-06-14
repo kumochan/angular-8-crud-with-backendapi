@@ -160,6 +160,16 @@ Image upload angular
 
 ```
 
+Issues
+```
+Vấn đề 01: Details
+Vấn đề 02: Token
+Vấn đề 03: Login/Register
+Vấn đề 04: Delete
+Vấn đề 05: Services not working
+
+```
+
 # lession-08
 
 ``` 
